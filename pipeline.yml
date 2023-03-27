@@ -1,0 +1,23 @@
+trigger:
+  - #enter your branch triggger here
+
+pool: #enter your own agent pool here
+
+resources:
+  repositories:
+    - repository: pipelinetemplates
+      type: git
+      name: pipelinetemplates
+
+steps:
+- template: validation.yml@pipelinetemplates
+  parameters: 
+    SmokeTestFile: #enter your values here
+    Dockerfile: 
+    DockerComposeFile: 
+    workingdirectory: 
+    DockerCredentials:
+    ContainerRepo:
+    
+
+
